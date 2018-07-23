@@ -1,7 +1,7 @@
 #ifndef AD93XX_DEVICE_H
 #define AD93XX_DEVICE_H
 
-#ifdef AD93XX_EXPORTS
+#ifdef ad93xx_EXPORTS
 #define AD93XX_API __declspec(dllexport) 
 #else
 #define AD93XX_API __declspec(dllimport) 
