@@ -1,12 +1,16 @@
 #ifndef AD93XX_DEVICE_H
 #define AD93XX_DEVICE_H
 
+#ifndef __linux__
 #ifdef ad93xx_EXPORTS
 #define AD93XX_API __declspec(dllexport) 
 #else
 #define AD93XX_API __declspec(dllimport) 
 #endif
-
+#else
+#define AD93XX_API	
+#endif
+	
 #include "AD93xx_Device_Params.h"
 
 class AD_Device_Impl;

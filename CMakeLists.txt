@@ -17,6 +17,13 @@ find_path(AD9361_INCLUDE_DIRS ad9361.h)
 find_library(GIPCY_LIBRARIES gipcy)
 find_path(GIPCY_INCLUDE_DIRS gipcy.h)
 
+SET(AD93XX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/ad93xx)
+SET(AD93XX_LIBRARIES ${CMAKE_SOURCE_DIR}/ad93xx/ad93xx${CMAKE_LINK_LIBRARY_SUFFIX})
+
+SET(INSTALL_PATH ${CMAKE_SOURCE_DIR}/bin)
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 add_subdirectory(ad93xx)
 add_subdirectory(ad9361-recv)
 add_subdirectory(ad9361-send)

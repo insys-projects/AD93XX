@@ -3,7 +3,7 @@
 
 #include "iio.h"
 
-#include "Ad_Device_Impl.h"
+#include "AD_Device_Impl.h"
 
 #define AD9361_PHY "ad9361-phy"
 
