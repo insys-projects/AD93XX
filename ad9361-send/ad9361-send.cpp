@@ -2,6 +2,8 @@
 #include "ipcdefs.h"
 #include "AD93xx_Device.h"
 
+#define MAX_PATH 256
+
 enum iodev { RX, TX };
 
 long long g_nTxCenterFreq;
@@ -17,7 +19,7 @@ char g_sPortSelect[1024];
 long long g_nAttenuation0;
 long long g_nAttenuation1;
 
-IPC_str g_iniFileName[MAX_PATH] = _IPCS("\\ad9361-send.ini");
+IPC_str g_iniFileName[MAX_PATH] = _IPCS("/ad9361-send.ini");
 
 char g_sIPAddr[15];
 

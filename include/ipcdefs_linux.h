@@ -77,6 +77,10 @@
 #define IPCS_asctime            asctime
 #define IPCS_ctime              ctime
 #define	IPCS_strftime           strftime
+#define IPCS_mbstoipcs(dst, src, maxcnt) strcpy( dst, src )
+#define IPCS_ipcstombs(dst, src, maxcnt) strcpy( dst, src )
+#define IPCS_wcstoipcs(dst, src, maxcnt) mbstowcs( dst, src, maxcnt )
+#define IPCS_ipcstowcs(dst, src, maxcnt) mbstowcs( dst, src, maxcnt )
 //-------------------------------------
 
 #endif /* __linux__ */

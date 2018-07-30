@@ -2,12 +2,6 @@ cmake_minimum_required(VERSION 2.8) # Проверка версии CMake.
 									# Если версия установленой программы
 									# старее указаной, произайдёт аварийный выход.
 
-#IF(WIN32)
-#	SET(AD93XX_LIB "ad93xx")
-#ELSE(WIN64)		
-#	SET(AD93XX_LIB "ad93xx64")
-#ENDIF(WIN64)
-
 project(AD93XX CXX C)				# Название проекта
 
 find_library(IIO_LIBRARIES iio)
@@ -17,10 +11,13 @@ find_path(AD9361_INCLUDE_DIRS ad9361.h)
 find_library(GIPCY_LIBRARIES gipcy)
 find_path(GIPCY_INCLUDE_DIRS gipcy.h)
 
-SET(AD93XX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/ad93xx)
-SET(AD93XX_LIBRARIES ${CMAKE_SOURCE_DIR}/ad93xx/ad93xx${CMAKE_LINK_LIBRARY_SUFFIX})
+if(X64)
+set(POSTFIX_X64 64)
+endif(X64)
 
-SET(INSTALL_PATH ${CMAKE_SOURCE_DIR}/bin)
+set(AD93XX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/ad93xx)
+
+set(INSTALL_PATH ${CMAKE_SOURCE_DIR}/bin)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 

@@ -5,8 +5,7 @@
 
 #if defined (__LINUX__) || defined(__linux__) || defined (__QNX__)
 #include "ipcdefs_linux.h"
-#endif
-
+#else
 #ifdef _WIN64
 #define _IPCS(x)		L ## x
 #define IPCS_strlen		wcslen
@@ -181,6 +180,7 @@
 	#define	huge
 #endif  // WIN32
 
+#endif
 
 #endif /* _IPCDEFS_H_ */
 

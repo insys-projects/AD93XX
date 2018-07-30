@@ -2,6 +2,8 @@
 #include "ipcdefs.h"
 #include "AD93xx_Device.h"
 
+#define MAX_PATH 256
+
 enum iodev { RX, TX };
 
 long long g_nRxCenterFreq;
@@ -20,7 +22,7 @@ char g_sGainMode1[1024];
 long long g_nManualGain0;
 long long g_nManualGain1;
 
-IPC_str g_iniFileName[MAX_PATH] = _IPCS("\\ad9361-recv.ini");
+IPC_str g_iniFileName[MAX_PATH] = _IPCS("/ad9361-recv.ini");
 char g_sIPAddr[15];
 
 long long g_isFirFilter;
